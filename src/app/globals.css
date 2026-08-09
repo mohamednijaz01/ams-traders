@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════
+   AMS Traders — Design System
+   Curated 3-Color Palette (warm-neutral undertones):
+     Primary   #16a34a  Fresh Produce Green (trust, nature)
+     Secondary #d97706  Warm Amber (energy, CTAs, highlights)
+     Tertiary  #1a2e1f  Deep Forest Charcoal (footer, contrast)
+   ═══════════════════════════════════════════════════ */
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a2e1f;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+
+  /* Primary: Fresh Produce Green */
+  --primary: #16a34a;
+  --primary-dark: #15803d;
+  --primary-deeper: #0f6b30;
+  --primary-light: #f0fdf4;
+
+  /* Secondary: Warm Amber (CTAs, highlights) */
+  --secondary: #d97706;
+  --secondary-dark: #b45309;
+  --secondary-light: #fffbeb;
+
+  /* Tertiary: Deep Forest Charcoal (footer, strong contrast) */
+  --tertiary: #1a2e1f;
+  --tertiary-light: #2d4a35;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-sora), system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+/* ── Reusable Utility Classes ── */
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+}
+
+.glass-card {
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: #bbf7d0;
+  box-shadow: 0 12px 28px -6px rgba(22, 163, 74, 0.12);
+  transform: translateY(-3px);
+}
+
+.text-gradient {
+  color: var(--primary-dark);
+}
+
+/* Primary CTA — Warm Amber */
+.btn-orange {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #ffffff;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.01em;
+}
+
+.btn-orange:hover {
+  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Secondary CTA — Green */
+.btn-green {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: #ffffff;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-green:hover {
+  background: linear-gradient(135deg, #15803d 0%, #0f6b30 100%);
+  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.3);
+  transform: translateY(-1px);
+}
+
+/* ── Section heading helpers ── */
+.section-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid #bbf7d0;
+  display: inline-block;
+}
+
+/* ── Smooth scroll anchor offset for sticky nav ── */
+[id] {
+  scroll-margin-top: 6rem;
+}
