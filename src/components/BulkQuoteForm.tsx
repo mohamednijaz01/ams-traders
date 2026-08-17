@@ -32,7 +32,7 @@ export default function BulkQuoteForm() {
 
     try {
       // Insert into Supabase table `inquiries`
-      const { data, error } = await supabase.from("inquiries").insert([
+      const { error } = await supabase.from("inquiries").insert([
         {
           name: formData.name,
           phone: formData.phone,

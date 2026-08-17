@@ -9,11 +9,8 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div className="md:col-span-2 space-y-3">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold text-base shadow-xs">
-                🌱
-              </div>
-              <span className="font-heading font-bold text-white text-base">AMS Traders</span>
+            <Link href="/" className="inline-block">
+              <span className="font-heading font-extrabold text-white text-lg tracking-[-0.03em]">AMS Traders</span>
             </Link>
             <p className="text-white/55 max-w-sm leading-relaxed text-sm">
               Trusted wholesale supplier of fresh fruits and vegetables. Serving supermarkets, hotels, restaurants, and food service partners with reliable farm-direct supply since 2003.
@@ -65,6 +62,13 @@ export default function Footer() {
             <a href="#" className="hover:text-white/70 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white/70 transition-colors">Terms of Supply</a>
           </div>
+        </div>
+
+        {/* Staff Login — intentionally understated */}
+        <div className="mt-4 text-center">
+          <Link href="/admin" className="text-white/20 hover:text-white/40 transition-colors text-[11px]">
+            Staff Login
+          </Link>
         </div>
 
       </div>
